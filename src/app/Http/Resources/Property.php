@@ -24,7 +24,7 @@ class Property extends JsonResource
             'status' =>$this->status,
             'type' => $this->type,
             'description' => $this->description,
-            'contact_mail' => $this->contact_email,
+            'contact_email' => $this->contact_email,
             'contact_phone' => $this->contact_phone,
             'condtion' => $this->condition,
             'equipment' => $this->equipment,

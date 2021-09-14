@@ -16,7 +16,7 @@ class PropertyController extends BaseController
     {
         // $title = $request->get('title');
         
-        $properties = Property::all();
+        // $properties = Property::all();
 
         // $properties = Property::where('title', 'LIKE', "%$title%")->get();
 
@@ -24,7 +24,7 @@ class PropertyController extends BaseController
         // $properties = $properties->where('title', 'LIKE', "%" . $request->get('q') . "%");
         // $properties = $properties->get();
 
-        // $properties = PropertySearch::apply($request);
+        $properties = PropertySearch::apply($request);
 
         return
             $this->sendResponse(
@@ -74,6 +74,7 @@ class PropertyController extends BaseController
         }
         $property->street = $input['street'];
         $property->description = $input['description'];
+        $property->created_at = $input['created_at'];
         $property->save();
         return $this->sendResponse(
             new PropertyResource($property),
