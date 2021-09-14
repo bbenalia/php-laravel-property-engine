@@ -14,21 +14,20 @@ class Property extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
             'id' => $this->id,
-            'title' => $this->title,
             'street' => $this->street,
             'number' => $this->number,
             'city' => $this->city,
-            'province' => $this->province,
-            'country' => $this->country,
-            'status' => $this->status,
+            'province' =>$this->province,
+            'country' =>$this->country,
+            'status' =>$this->status,
             'type' => $this->type,
             'description' => $this->description,
-            'contact_email' => $this->contact_email,
+            'contact_mail' => $this->contact_email,
             'contact_phone' => $this->contact_phone,
-            'condition' => $this->condition,
+            'condtion' => $this->condition,
+            'equipment' => $this->equipment,
             'room' => $this->room,
             'bath' => $this->bath,
             'size' => $this->size,
@@ -38,8 +37,9 @@ class Property extends JsonResource
             'air_conditioning' => $this->air_conditioning,
             'swimming_pool' => $this->swimming_pool,
             'terrace' => $this->terrace,
+            'image' => $this->image,
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y'),
-        ];
+    ];
     }
 }

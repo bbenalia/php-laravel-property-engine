@@ -2,6 +2,7 @@ mysql
 redis
 docker-compose.yml
 Dockerfile
+.DS_Store
 
 src/node_modules
 src/public/hot

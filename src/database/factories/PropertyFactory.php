@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Property;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class PropertyFactory extends Factory
 {
@@ -23,7 +22,6 @@ class PropertyFactory extends Factory
     public function definition()
     {
         return [
-            "title"            => $this->faker->sentence($nbWords = 3, $variableNbWords = true),
             "description"      => $this->faker->sentence($nbWords = 12, $variableNbWords = true),
             "street"           => $this->faker->streetAddress(),
             "number"           => $this->faker->randomNumber($nbDigits = 4, $strict = false),
@@ -35,6 +33,7 @@ class PropertyFactory extends Factory
             "contact_email"    => $this->faker->email(),
             "contact_phone"    => $this->faker->phoneNumber(),
             "condition"        => $this->faker->randomElement(['good', 'new']),
+            "equipment"        => $this->faker->randomElement(['furnished', 'unfurnished']),
             "room"             => $this->faker->numberBetween($min = 1, $max = 7),
             "bath"             => $this->faker->numberBetween($min = 1, $max = 4),
             "size"             => $this->faker->numberBetween($min = 40, $max = 250),
@@ -43,7 +42,8 @@ class PropertyFactory extends Factory
             "garden"           => $this->faker->boolean(),
             "air_conditioning" => $this->faker->boolean(),
             "swimming_pool"    => $this->faker->boolean(),
-            "terrace"          => $this->faker->boolean()
+            "terrace"          => $this->faker->boolean(),
+            "image"            => "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
         ];
     }
 }

@@ -15,27 +15,28 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->text('description');
             $table->text('street');
-            $table->string('number');
+            $table->integer('number');
             $table->string('city');
             $table->string('province');
             $table->string('country');
-            $table->string('status');
-            $table->string('type');
+            $table->enum('status', ['available']);
+            $table->enum('type', ['flat/apartment', 'house']);
             $table->string('contact_email');
             $table->string('contact_phone');
-            $table->string('condition');
-            $table->string('room');
-            $table->string('bath');
-            $table->string('size');
-            $table->string('price');
-            $table->string('pet');
-            $table->string('garden');
-            $table->string('air_conditioning');
-            $table->string('swimming_pool');
-            $table->string('terrace');
+            $table->enum('condition', ['new', 'good']);
+            $table->enum('equipment', ['furnished', 'unfurnished']);
+            $table->integer('room');
+            $table->integer('bath');
+            $table->integer('size');
+            $table->integer('price');
+            $table->boolean('pet');
+            $table->boolean('garden');
+            $table->boolean('air_conditioning');
+            $table->boolean('swimming_pool');
+            $table->boolean('terrace');
+            $table->string('image');
             $table->timestamps();
         });
     }

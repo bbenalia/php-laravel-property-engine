@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Property;
 use Illuminate\Database\Seeder;
+use App\Models\Property;
 
 class PropertySeeder extends Seeder
 {
