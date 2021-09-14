@@ -74,6 +74,7 @@ class PropertyController extends BaseController
         }
         $property->street = $input['street'];
         $property->description = $input['description'];
+        $property->created_at = $input['created_at'];
         $property->save();
         return $this->sendResponse(
             new PropertyResource($property),

@@ -73,6 +73,13 @@ class PropertySearch
         if ($filters->has('publication_date_gte'))
         $properties = $properties->where('created_at', '>=', $filters->get('publication_date_gte'));
 
+         // price
+         if ($filters->has('price_gte'))
+         $properties = $properties->where('price', '>=', $filters->get('price_gte'));
+
+         if ($filters->has('price_lte'))
+         $properties = $properties->where('price', '<=', $filters->get('price_lte'));
+
 
 
         // Get the results and return them.
