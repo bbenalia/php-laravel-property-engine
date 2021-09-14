@@ -1,5 +1,7 @@
 mysql
 redis
+docker-compose.yml
+Dockerfile
 
 src/node_modules
 src/public/hot
