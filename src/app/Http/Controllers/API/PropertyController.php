@@ -15,8 +15,8 @@ class PropertyController extends BaseController
     public function index(Request $request)
     {
         // $title = $request->get('title');
-
-        // $properties = Property::all();
+        
+        $properties = Property::all();
 
         // $properties = Property::where('title', 'LIKE', "%$title%")->get();
 
@@ -24,7 +24,7 @@ class PropertyController extends BaseController
         // $properties = $properties->where('title', 'LIKE', "%" . $request->get('q') . "%");
         // $properties = $properties->get();
 
-        $properties = PropertySearch::apply($request);
+        // $properties = PropertySearch::apply($request);
 
         return
             $this->sendResponse(
@@ -37,7 +37,7 @@ class PropertyController extends BaseController
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'title' => 'required',
+            'street' => 'required',
             'description' => 'required'
         ]);
         if ($validator->fails()) {
@@ -66,13 +66,13 @@ class PropertyController extends BaseController
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'title' => 'required',
+            'street' => 'required',
             'description' => 'required'
         ]);
         if ($validator->fails()) {
             return $this->sendError($validator->errors());
         }
-        $property->title = $input['title'];
+        $property->street = $input['street'];
         $property->description = $input['description'];
         $property->save();
         return $this->sendResponse(
