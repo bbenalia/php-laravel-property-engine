@@ -15,7 +15,7 @@ class Property extends Model
   'status',
   'type',
   'description',
-  'contact_mail',
+  'contact_email',
   'contact_phone',
   'condition',
   'equipment',

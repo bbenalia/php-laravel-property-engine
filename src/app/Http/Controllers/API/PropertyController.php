@@ -16,7 +16,7 @@ class PropertyController extends BaseController
     {
         // $title = $request->get('title');
         
-        $properties = Property::all();
+        // $properties = Property::all();
 
         // $properties = Property::where('title', 'LIKE', "%$title%")->get();
 
@@ -24,7 +24,7 @@ class PropertyController extends BaseController
         // $properties = $properties->where('title', 'LIKE', "%" . $request->get('q') . "%");
         // $properties = $properties->get();
 
-        // $properties = PropertySearch::apply($request);
+        $properties = PropertySearch::apply($request);
 
         return
             $this->sendResponse(
