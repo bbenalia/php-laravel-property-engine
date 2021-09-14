@@ -21,10 +21,12 @@ use App\Http\Controllers\API\PropertyController;
 Route::post('login', [AuthController::class, 'signin']);
 Route::post('register', [AuthController::class, 'signup']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    // Route::resource('properties', PropertyController::class);
-    Route::apiResource('properties', PropertyController::class);
-});
+Route::apiResource('properties', PropertyController::class);
+
+// Route::middleware('auth:sanctum')->group(function () {
+//     // Route::resource('properties', PropertyController::class);
+//     Route::apiResource('properties', PropertyController::class);
+// });
     
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
