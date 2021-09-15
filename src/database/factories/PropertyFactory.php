@@ -21,6 +21,13 @@ class PropertyFactory extends Factory
      */
     public function definition()
     {
+        $images = [
+            "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+            "https://images.adsttc.com/media/images/5ecd/d4ac/b357/65c6/7300/009d/large_jpg/02C.jpg?1590547607",
+            "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1046&q=80",
+            "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+        ];
+
         return [
             "description"      => $this->faker->sentence($nbWords = 12, $variableNbWords = true),
             "street"           => $this->faker->streetAddress(),
@@ -43,7 +50,7 @@ class PropertyFactory extends Factory
             "air_conditioning" => $this->faker->boolean(),
             "swimming_pool"    => $this->faker->boolean(),
             "terrace"          => $this->faker->boolean(),
-            "image"            => "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+            "image"            => $this->faker->randomElement($images),
         ];
     }
 }
