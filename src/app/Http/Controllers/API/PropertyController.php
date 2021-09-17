@@ -14,23 +14,14 @@ class PropertyController extends BaseController
 {
     public function index(Request $request)
     {
-        // $title = $request->get('title');
-        
-        // $properties = Property::all();
-
-        // $properties = Property::where('title', 'LIKE', "%$title%")->get();
-
-        // $properties = new Property;
-        // $properties = $properties->where('title', 'LIKE', "%" . $request->get('q') . "%");
-        // $properties = $properties->get();
-
         $properties = PropertySearch::apply($request);
 
         return
-            $this->sendResponse(
-                PropertyResource::collection($properties),
-                'Property fetched.'
-            );
+            response()->json($properties, 200);
+        // $this->sendResponse(
+        //     PropertyResource::collection($properties),
+        //     'Property fetched.'
+        // );
     }
 
     public function store(Request $request)
