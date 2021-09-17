@@ -19,14 +19,14 @@ class Property extends JsonResource
             'street' => $this->street,
             'number' => $this->number,
             'city' => $this->city,
-            'province' =>$this->province,
-            'country' =>$this->country,
-            'status' =>$this->status,
+            'province' => $this->province,
+            'country' => $this->country,
+            'status' => $this->status,
             'type' => $this->type,
             'description' => $this->description,
             'contact_email' => $this->contact_email,
             'contact_phone' => $this->contact_phone,
-            'condtion' => $this->condition,
+            'condition' => $this->condition,
             'equipment' => $this->equipment,
             'room' => $this->room,
             'bath' => $this->bath,
@@ -40,6 +40,6 @@ class Property extends JsonResource
             'image' => $this->image,
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y'),
-    ];
+        ];
     }
 }

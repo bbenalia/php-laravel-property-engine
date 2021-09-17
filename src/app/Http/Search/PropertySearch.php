@@ -15,7 +15,6 @@ class PropertySearch
         if ($filters->has('q'))
             $properties = $properties->where('city', 'LIKE', "%" . $filters->get('q') . "%");
 
-
         // rooms
         if ($filters->has('room'))
             $properties = $properties->whereIn('room', $filters->get('room'));
@@ -69,6 +68,6 @@ class PropertySearch
             $properties = $properties->where('price', '<=', $filters->get('price_lte'));
 
         // Get the results and return them.
-        return $properties->get();
+        return $properties->paginate(10);
     }
 }
